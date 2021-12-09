@@ -2,7 +2,12 @@ type TemplateEngineData = {
   [key: string]: string | number | boolean;
 };
 
-type TemplateEngine = (template: string, data: TemplateEngineData) => string;
+type TemplateEngine = (
+  template: string,
+  data: TemplateEngineData,
+  delimiterStart?: string,
+  delimiterEnd?: string
+) => string;
 
 export const getByPath = (obj: any, path: string) =>
   path.split(".").reduce((acc, key) => acc && acc[key], obj);

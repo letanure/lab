@@ -124,4 +124,10 @@ describe("templateEngine", () => {
     expect(templateEngine(template, data)).toBe(`Hello Luiz
         Tanure, my age is 40!`);
   });
+
+  it("should return work with different delimiters", () => {
+    const template = "Hello <%name%>";
+    const data = { name: "Luiz" };
+    expect(templateEngine(template, data, "<%", "%>")).toBe("Hello Luiz");
+  });
 });
