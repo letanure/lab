@@ -1,9 +1,68 @@
 import { getByPath, templateEngine } from ".";
 
-console.log(getByPath);
+describe("getByPath", () => {
+  it("shoud return 1st level", () => {
+    const obj = {
+      a: 1,
+      b: 2,
+      c: 3,
+    };
+    expect(getByPath(obj, "a")).toBe(1);
+  });
 
-// describe("getByPath", () => {
-// });
+  it("shoud return 2nd level", () => {
+    const obj = {
+      a: {
+        b: 1,
+      },
+    };
+    expect(getByPath(obj, "a.b")).toBe(1);
+  });
+
+  it("shoud return 3rd level", () => {
+    const obj = {
+      a: {
+        b: {
+          c: 1,
+        },
+      },
+    };
+    expect(getByPath(obj, "a.b.c")).toBe(1);
+  });
+
+  it("shoud return object", () => {
+    const obj = {
+      a: {
+        b: {
+          c: 1,
+        },
+      },
+    };
+    expect(getByPath(obj, "a.b")).toEqual({ c: 1 });
+  });
+
+  it("sould return undefined", () => {
+    const obj = {
+      a: {
+        b: {
+          c: 1,
+        },
+      },
+    };
+    expect(getByPath(obj, "a.b.c.d")).toBeUndefined();
+  });
+
+  it("sould return undefined", () => {
+    const obj = {
+      a: {
+        b: {
+          c: 1,
+        },
+      },
+    };
+    expect(getByPath(obj, "a.b.c.d.e")).toBeUndefined();
+  });
+});
 
 describe("templateEngine", () => {
   it("should return a string", () => {
