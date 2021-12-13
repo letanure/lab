@@ -1,0 +1,15 @@
+/* CSS Properties and Values API */
+#houdini-Prop-Api {
+  --someColor: orange;
+  background: linear-gradient(90deg, red 0%, var(--someColor) 100%);
+  transition: --someColor 800ms ease-in-out;
+}
+
+#houdini-Prop-Api:hover {
+  --someColor: blue;
+}
+
+/* * CSS Properties and Values API */
+#houdini-Object-Model-API {
+  background-color: red;
+}
