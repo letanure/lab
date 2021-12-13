@@ -50,3 +50,36 @@
 .houdini-layout-worklet-element:nth-child(5) {
   height: 1rem;
 }
+
+/* Animation API */
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.15);
+  }
+}
+#houdini-animation-css {
+  animation: bounce 800ms ease-in-out infinite;
+  background-color: red;
+  height: 10rem;
+  width: 10rem;
+}
+#houdini-animation-js {
+  background-color: rgb(161, 86, 86);
+  height: 10rem;
+  width: 10rem;
+}
+#houdini-animation-API {
+  background-color: rgb(104, 75, 75);
+  height: 10rem;
+  width: 10rem;
+}

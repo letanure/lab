@@ -81,9 +81,49 @@ const init = () => {
    * Layout API
    * https://www.w3.org/TR/css-layout-api-1/
    * new `display` modes
-   * chrome://flags/#enable-experimental-web-platform-features
+   * chrome://flags/#enable-experimental-web-platform-featuress
    */
   "layoutWorklet" in CSS && CSS.layoutWorklet.addModule("./demoLayoutApi.js");
+
+  /**
+   * Animation API
+   */
+  //   regulat JS style
+  const keyframes = [
+    {
+      transform: "scale(1)",
+      offset: 0,
+    },
+    {
+      transform: "scale(1.1)",
+      offset: 0.25,
+    },
+    {
+      transform: "scale(1)",
+      offset: 0.5,
+    },
+    {
+      transform: "scale(1.15)",
+      offset: 0.75,
+    },
+  ];
+
+  const timing = {
+    duration: 800,
+    easing: "ease-in-out",
+    iterations: Infinity,
+  };
+
+  const element2 = document.querySelector("#houdini-animation-js");
+  const animation = element2.animate(keyframes, timing);
+  //   animation.pause();
+  //   animation.play();
+  //   animation.reverse();
+  //   animation.playbackRate = animation.playbackRate * 1.5;
+  //   animation.playbackRate = animation.playbackRate / 1.5;
+  //   CSS.animationWorklet.addModule("./demoAnimationApi.js.js");
+
+  //   CSS.animationWorklet.addModule("./demoAnimationApi.js;.js");
 };
 
 export default init;
