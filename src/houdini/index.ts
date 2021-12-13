@@ -81,6 +81,7 @@ const init = () => {
    * Layout API
    * https://www.w3.org/TR/css-layout-api-1/
    * new `display` modes
+   * chrome://flags/#enable-experimental-web-platform-features
    */
   "layoutWorklet" in CSS && CSS.layoutWorklet.addModule("./demoLayoutApi.js");
 };
