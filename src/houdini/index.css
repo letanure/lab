@@ -13,3 +13,19 @@
 #houdini-Object-Model-API {
   background-color: red;
 }
+
+/* Paint Worklet */
+#houdini-paint-worklet {
+  width: 20rem;
+  height: 9rem;
+  --some-color: red;
+  --some-length: 120px;
+  --some-width: 16px;
+  background: paint(demoPaintWorklet);
+  transition: --some-length 400ms ease-in-out, --some-width 400ms ease-in-out;
+}
+
+#houdini-paint-worklet:hover {
+  --some-length: 220px;
+  --some-width: 24px;
+}

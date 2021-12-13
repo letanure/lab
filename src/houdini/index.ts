@@ -50,6 +50,32 @@ const init = () => {
    * https://drafts.csswg.org/css-fonts-3/#font-metrics-api
    * not supported in any browser yet.
    */
+
+  /**
+   * Worklets
+   * scripts that plugs to low-level parts of the rendering engine. It runs JavaScript and WebAssembly code.
+   * Paint Worklet | Layout Worklet | Animation Worklet
+   */
+
+  //   Paint Worklet
+  //   The Paint Worklet code needs its own JS file.
+  CSS.registerProperty({
+    name: "--some-length",
+    syntax: "<length>",
+    inherits: false,
+    initialValue: "120px",
+  });
+
+  CSS.registerProperty({
+    name: "--some-width",
+    syntax: "<length>",
+    inherits: false,
+    initialValue: "16px",
+  });
+
+  // Add the module from a local file
+  // Or add it from a CDN
+  CSS.paintWorklet.addModule("./demoPaintWorklet.js");
 };
 
 export default init;
