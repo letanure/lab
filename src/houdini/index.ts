@@ -75,7 +75,14 @@ const init = () => {
 
   // Add the module from a local file
   // Or add it from a CDN
-  CSS.paintWorklet.addModule("./demoPaintWorklet.js");
+  "paintWorklet" in CSS && CSS.paintWorklet.addModule("./demoPaintWorklet.js");
+
+  /**
+   * Layout API
+   * https://www.w3.org/TR/css-layout-api-1/
+   * new `display` modes
+   */
+  "layoutWorklet" in CSS && CSS.layoutWorklet.addModule("./demoLayoutApi.js");
 };
 
 export default init;

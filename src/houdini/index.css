@@ -29,3 +29,24 @@
   --some-length: 220px;
   --some-width: 24px;
 }
+
+/* Layout API */
+#houdini-layout-worklet {
+  --padding: 20;
+  --columns: 2;
+  display: layout(masonry);
+  width: 50rem;
+}
+.houdini-layout-worklet-element {
+  outline: 1px solid red;
+}
+.houdini-layout-worklet-element:nth-child(2),
+.houdini-layout-worklet-element:nth-child(6),
+.houdini-layout-worklet-element:nth-child(3) {
+  height: 3rem;
+}
+
+.houdini-layout-worklet-element:nth-child(4),
+.houdini-layout-worklet-element:nth-child(5) {
+  height: 1rem;
+}
